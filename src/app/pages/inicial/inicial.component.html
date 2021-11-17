@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="content">
+        <span class="titulo">Roles do usuário</span>
+        <div class="container-roles">
+            <div *ngFor="let r of enumRoles | keyvalue">
+                <mat-checkbox [value]="r.value" (change)="changeRole($event)">{{r.key}}</mat-checkbox>
+            </div>
+        </div>
+        <div class="container-conteudo">
+            <div *roles="['ADM']">Visivel para ADM</div>
+            <div *roles="['GERENTE']">Visivel para gerente</div>
+            <div *roles="['FUNCIONARIO']">Visivel para funcionário</div>
+            <div *roles="['GERENTE','FUNCIONARIO']">Visivel para gerente ou funcionário</div>
+        </div>
+
+    </div>
+    
+</div>
